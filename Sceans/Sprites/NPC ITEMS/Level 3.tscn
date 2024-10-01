@@ -7941,7 +7941,7 @@ shape = SubResource("WorldBoundaryShape2D_3cx0m")
 [node name="finall" type="Node" parent="."]
 
 [node name="Tertius" parent="." instance=ExtResource("7_78gph")]
-position = Vector2(1128, -299)
+position = Vector2(133, 165)
 
 [node name="last animaytion" type="AnimationPlayer" parent="Tertius"]
 root_node = NodePath("../6")
