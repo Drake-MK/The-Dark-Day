@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://dkfmy3d8a1tng"]
+[gd_scene load_steps=8 format=3 uid="uid://dkfmy3d8a1tng"]
 
 [ext_resource type="Texture2D" uid="uid://b5252238a5ef6" path="res://Assets/Game Ass/craftpix-net-159846-free-sci-fi-platformer-1-bit-pixel-art-game-kit/Enemies/Alien4.png" id="1_q6xfm"]
 [ext_resource type="Script" path="res://Scripts/Enemies/grosshoper.gd" id="1_ypf1r"]
-[ext_resource type="Texture2D" uid="uid://bqiauha2j7ql4" path="res://icon.svg" id="3_3xi0n"]
 [ext_resource type="AnimationLibrary" uid="uid://wrqc1nbnn0gy" path="res://animation/Enemies/grasshopper/grasshopper.res" id="3_lj73n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v5n18"]
@@ -72,11 +71,6 @@ debug_color = Color(0.419203, 0.566242, 0.586241, 0.42)
 position = Vector2(1, -18)
 shape = SubResource("CircleShape2D_4ci18")
 debug_color = Color(0.607079, 0.0987091, 0.985715, 0.42)
-
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(3, -9)
-scale = Vector2(0.0113258, 0.0096245)
-texture = ExtResource("3_3xi0n")
 
 [node name="limiter L&R" type="RayCast2D" parent="."]
 modulate = Color(0.65098, 1, 1, 1)

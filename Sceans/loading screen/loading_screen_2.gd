@@ -1,28 +1,38 @@
 extends Node
-@onready var timer = $Timer
 
-var pro = []
-var Sname
-var status = 0
 @onready var progress_bar = $ProgressBar
-var allow = false
+
+var pro = []  # Holds the loading progress
+var scene_path = "res://Sceans/Sprites/NPC ITEMS/Level 2.tscn"
+var status = 0
+var allow_loading = false
+
 func _ready():
-	allow = false
-	timer.start(0.1)
+	allow_loading = false
+	start_threaded_loading()
 
+# Start the threaded resource loading process
+func start_threaded_loading():
+	ResourceLoader.load_threaded_request(scene_path)
+	allow_loading = true
 
+func _process(delta):
+	if allow_loading:
+		status = ResourceLoader.load_threaded_get_status(scene_path, pro)
 
-func  _process(delta):
-	if allow:		
-		status = ResourceLoader.load_threaded_get_status(Sname,pro)
-		progress_bar.value = int(pro[0]*100)
+		# Ensure we have a progress value
+		if pro.size() > 0:
+			progress_bar.value = int(pro[0] * 100)
+
+		# Check if the resource is fully loaded
 		if status == ResourceLoader.THREAD_LOAD_LOADED:
-			var scean = ResourceLoader.load_threaded_get(Sname)
-			get_tree().change_scene_to_packed(scean)
+			var loaded_scene = ResourceLoader.load_threaded_get(scene_path)
 
+			# Ensure the scene is valid before switching
+			if loaded_scene != null:
+				# Wait until the next idle frame to change the scene
+				call_deferred("_change_scene", loaded_scene)
 
-func _on_timer_timeout():
-	pass # Replace with function body.
-	allow = true
-	Sname = "res://Sceans/Sprites/NPC ITEMS/Level 2.tscn"
-	ResourceLoader.load_threaded_request(Sname)
+# Change the scene on an idle frame
+func _change_scene(loaded_scene):
+	get_tree().change_scene_to_packed(loaded_scene)
