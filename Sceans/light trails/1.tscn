@@ -1,0 +1,83 @@
+[gd_scene load_steps=7 format=3 uid="uid://5kifrwmr0rcm"]
+
+[ext_resource type="Texture2D" uid="uid://ulw1k0jchwwr" path="res://Assets/light/animation/2.png" id="1_dki72"]
+[ext_resource type="Script" path="res://Sceans/light trails/1.gd" id="2_e4fa3"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_b4h7t"]
+blend_mode = 1
+
+[sub_resource type="Animation" id="Animation_mi1fu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("1:vframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("1:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_bh752"]
+resource_name = "light trail"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("1:vframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("1:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_11abk"]
+_data = {
+"RESET": SubResource("Animation_mi1fu"),
+"light trail": SubResource("Animation_bh752")
+}
+
+[node name="1" type="Sprite2D"]
+material = SubResource("CanvasItemMaterial_b4h7t")
+position = Vector2(584, 232)
+scale = Vector2(0.0705585, 0.0705585)
+texture = ExtResource("1_dki72")
+hframes = 3
+script = ExtResource("2_e4fa3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_11abk")
+}

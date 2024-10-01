@@ -1,0 +1,15 @@
+join MC 1 [animation="Instant In Or Out"]
+MC: Looks like I had the same dream..
+MC: But where am I?
+leave MC [animation="Instant In Or Out"]
+join TAi 1 [animation="Instant In Or Out"]
+TAi: ERROR \: Server Abnormility Detected.\
+Switching to offline mode.\
+MODE \: "Evolution" \: Blocked\
+........
+TAi: ...............\
+Please connect to "MOTHER"
+leave TAi [animation="Instant In Or Out"]
+join MC 1 [animation="Instant In Or Out"]
+MC: Ha, Looks like even the most Advanced Cybernet can'n solve the problem
+leave --All-- [animation="Instant In Or Out"]

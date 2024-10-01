@@ -1,0 +1,67 @@
+[gd_scene load_steps=8 format=3 uid="uid://tus0025et8lm"]
+
+[ext_resource type="Script" path="res://Scripts/Intractives/FlameTrap.gd" id="1_uwipu"]
+[ext_resource type="Texture2D" uid="uid://cm000mhud5u4" path="res://Assets/Game Ass/craftpix-net-159846-free-sci-fi-platformer-1-bit-pixel-art-game-kit/Traps/Trap2.png" id="2_0ppmv"]
+[ext_resource type="Animation" uid="uid://cdq5rbgu06r6y" path="res://animation/trap/Eletrigger.res" id="3_3ui7l"]
+[ext_resource type="Animation" uid="uid://1aox4etdwpi1" path="res://animation/trap/FlameTrigger.res" id="4_mbq3f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b4t72"]
+size = Vector2(15, 41.5)
+
+[sub_resource type="Animation" id="Animation_xhybm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_074fp"]
+_data = {
+"Eletrigger": ExtResource("3_3ui7l"),
+"FlameTrigger": ExtResource("4_mbq3f"),
+"RESET": SubResource("Animation_xhybm")
+}
+
+[node name="Flame thrower" type="Area2D"]
+script = ExtResource("1_uwipu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -19)
+rotation = 3.14159
+texture = ExtResource("2_0ppmv")
+hframes = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -25.25)
+shape = SubResource("RectangleShape2D_b4t72")
+disabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_074fp")
+}
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

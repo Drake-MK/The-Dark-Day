@@ -1,0 +1,76 @@
+[gd_scene load_steps=8 format=3 uid="uid://dte0q44apb7p6"]
+
+[ext_resource type="Script" path="res://Sceans/story/Story_2/story_2.gd" id="1_ichqu"]
+[ext_resource type="Texture2D" uid="uid://da2g52wfvj2ak" path="res://Assets/Game Ass/cyberpunk city 2 files/cyberpunk city 2 files/Environmet/background/back.png" id="2_blr2v"]
+[ext_resource type="Texture2D" uid="uid://bvxi66gxafcrb" path="res://Assets/Game Ass/cyberpunk city 2 files/cyberpunk city 2 files/Environmet/background/middle.png" id="3_1uq3a"]
+[ext_resource type="Texture2D" uid="uid://bd5furpblfihb" path="res://Assets/Game Ass/cyberpunk city 2 files/cyberpunk city 2 files/Environmet/background/front.png" id="4_y1lg8"]
+
+[sub_resource type="Animation" id="Animation_gk3qg"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_uhn4r"]
+resource_name = "new_animation"
+length = 0.35
+loop_mode = 1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qahp6"]
+_data = {
+"RESET": SubResource("Animation_gk3qg"),
+"new_animation": SubResource("Animation_uhn4r")
+}
+
+[node name="story_2" type="Node2D"]
+script = ExtResource("1_ichqu")
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
+
+[node name="Back" type="Sprite2D" parent="."]
+position = Vector2(27, -8)
+scale = Vector2(1.48739, 1.29346)
+texture = ExtResource("2_blr2v")
+
+[node name="BG" type="Node" parent="Back"]
+
+[node name="Back2" type="Sprite2D" parent="Back/BG"]
+position = Vector2(170, -8)
+scale = Vector2(1.48739, 1.29346)
+texture = ExtResource("2_blr2v")
+
+[node name="Back3" type="Sprite2D" parent="Back/BG"]
+position = Vector2(-115, -8)
+scale = Vector2(1.48739, 1.29346)
+texture = ExtResource("2_blr2v")
+
+[node name="Middle" type="Sprite2D" parent="Back/BG"]
+position = Vector2(22, -5)
+texture = ExtResource("3_1uq3a")
+
+[node name="Middle2" type="Sprite2D" parent="Back/BG"]
+position = Vector2(-122, -5)
+texture = ExtResource("3_1uq3a")
+
+[node name="Middle3" type="Sprite2D" parent="Back/BG"]
+position = Vector2(165, -5)
+texture = ExtResource("3_1uq3a")
+
+[node name="Front" type="Sprite2D" parent="Back/BG"]
+position = Vector2(71, -5)
+texture = ExtResource("4_y1lg8")
+
+[node name="Front2" type="Sprite2D" parent="Back/BG"]
+position = Vector2(327, -5)
+texture = ExtResource("4_y1lg8")
+
+[node name="Front3" type="Sprite2D" parent="Back/BG"]
+position = Vector2(-193, -5)
+texture = ExtResource("4_y1lg8")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(24, -22)
+zoom = Vector2(4, 4)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qahp6")
+}

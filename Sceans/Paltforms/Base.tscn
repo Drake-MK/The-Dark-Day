@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2upiq4xtcjps"]
+
+[ext_resource type="Texture2D" uid="uid://copicp2mlggtk" path="res://Assets/Game Ass/env/Stringstar fields/tileset.png" id="1_dvfix"]
+
+[node name="platform" type="Sprite2D"]
+position = Vector2(0.25, 0)
+scale = Vector2(0.993827, 1)
+texture = ExtResource("1_dvfix")
+region_enabled = true
+region_rect = Rect2(79.2157, 63.1841, 81.3486, 5.97855)

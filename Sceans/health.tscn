@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://7mdwmrcsqttd"]
+
+[ext_resource type="Script" path="res://Sceans/HEalth/health.gd" id="1_fw3wp"]
+[ext_resource type="Texture2D" uid="uid://cg3hobfo2s1hv" path="res://Assets/Game Ass/craftpix-net-159846-free-sci-fi-platformer-1-bit-pixel-art-game-kit/GUI/GUI_Elements.png" id="2_gktm7"]
+
+[sub_resource type="Animation" id="Animation_kfeim"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_tmcdp"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.4, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 2, 6, 12, 18, 24]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uu4lq"]
+_data = {
+"RESET": SubResource("Animation_kfeim"),
+"new_animation": SubResource("Animation_tmcdp")
+}
+
+[node name="Sprite2D" type="Sprite2D"]
+script = ExtResource("1_fw3wp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Health")
+libraries = {
+"": SubResource("AnimationLibrary_uu4lq")
+}
+
+[node name="bar" type="Sprite2D" parent="."]
+position = Vector2(16, 15)
+texture = ExtResource("2_gktm7")
+region_enabled = true
+region_rect = Rect2(37.2528, 5.65367, 57.5548, 25.3601)
+
+[node name="Health" type="Sprite2D" parent="."]
+position = Vector2(30, 5)
+texture = ExtResource("2_gktm7")
+hframes = 3
+vframes = 10
+
+[node name="Timer" type="Timer" parent="."]

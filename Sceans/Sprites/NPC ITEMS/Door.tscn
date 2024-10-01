@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3 uid="uid://bm7nud2ip8e1l"]
+
+[ext_resource type="Texture2D" uid="uid://ydjvhl56feq7" path="res://Assets/Game Ass/craftpix-net-159846-free-sci-fi-platformer-1-bit-pixel-art-game-kit/Objects/Door.png" id="1_e271x"]
+[ext_resource type="Script" path="res://Scripts/Intractives/Door.gd" id="2_xef10"]
+
+[sub_resource type="Animation" id="Animation_jdtbs"]
+resource_name = "Door Close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [3, 2, 1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_r6bbs"]
+resource_name = "Door Open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_njdsg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mdjc0"]
+_data = {
+"Door Close": SubResource("Animation_jdtbs"),
+"Door Open": SubResource("Animation_r6bbs"),
+"RESET": SubResource("Animation_njdsg")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sv6i1"]
+radius = 85.0235
+
+[node name="Door" type="Sprite2D"]
+texture = ExtResource("1_e271x")
+hframes = 4
+script = ExtResource("2_xef10")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mdjc0")
+}
+
+[node name="Door open zone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door open zone"]
+shape = SubResource("CircleShape2D_sv6i1")
+
+[connection signal="body_entered" from="Door open zone" to="." method="_on_door_open_zone_body_entered"]
+[connection signal="body_exited" from="Door open zone" to="." method="_on_door_open_zone_body_exited"]

@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://h3y5hsysxrwm"]
+
+[ext_resource type="FontFile" uid="uid://bfr2d00cjt7ov" path="res://Assets/Game Ass/FOnts/ancient-modern-tales-font/AncientModernTales-a7Po.ttf" id="1_afja1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hpmna"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 6
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
+[node name="Text box Holder" type="Panel"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -88.0
+offset_right = -2.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.999779, 0.859703)
+theme_override_styles/panel = SubResource("StyleBoxFlat_hpmna")
+
+[node name="Text Box" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = 21.0
+offset_right = 22.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.961589, 0.624979)
+theme_override_fonts/font = ExtResource("1_afja1")
+theme_override_font_sizes/font_size = 33
+text = "                  'Ruins -->
+		<-- Industrial Area 
+"

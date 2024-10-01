@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://y2widqsqmml7"]
+
+[ext_resource type="Script" path="res://Scripts/Health/health.gd" id="1_pp17i"]
+[ext_resource type="Texture2D" uid="uid://cg3hobfo2s1hv" path="res://Assets/Game Ass/craftpix-net-159846-free-sci-fi-platformer-1-bit-pixel-art-game-kit/GUI/GUI_Elements.png" id="2_c5dkn"]
+
+[node name="Health" type="Node2D"]
+script = ExtResource("1_pp17i")
+
+[node name="Heart" type="Sprite2D" parent="."]
+position = Vector2(16, 4)
+texture = ExtResource("2_c5dkn")
+hframes = 3
+vframes = 10
+frame = 24

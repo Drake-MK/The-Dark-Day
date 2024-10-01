@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnu4hsoh0iajk"]
+
+[ext_resource type="Texture2D" uid="uid://ipiqotqn2qe5" path="res://Assets/Game Ass/Robot Adventurer character asset/Laser gun/laser gun projectile animation.png" id="1_jrls1"]
+
+[node name="beam" type="Sprite2D"]
+texture_filter = 1
+texture = ExtResource("1_jrls1")
+hframes = 3

@@ -1,0 +1,196 @@
+[gd_scene load_steps=12 format=3 uid="uid://b65d3vu7ekrrl"]
+
+[ext_resource type="Texture2D" uid="uid://dcdvmx5u2nptj" path="res://Assets/Game Ass/craftpix-net-965938-free-effects-for-platformer-pixel-art-pack/5 Other/Portal1.png" id="2_hxbjv"]
+[ext_resource type="Texture2D" uid="uid://begm7p18h3y22" path="res://Assets/Game Ass/craftpix-net-965938-free-effects-for-platformer-pixel-art-pack/5 Other/Portal2.png" id="3_hvqwb"]
+[ext_resource type="Texture2D" uid="uid://dfecj3lvpp3e3" path="res://Assets/Game Ass/Dimensional_Portal.png" id="6_1uy2n"]
+
+[sub_resource type="Animation" id="Animation_ox28r"]
+resource_name = "portal"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_f1t54"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../portal origin:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../portal origin 2:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../portal origin:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../portal origin 2:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.0431373)]
+}
+
+[sub_resource type="Animation" id="Animation_3t6af"]
+resource_name = "portal in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../portal origin:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../portal origin 2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../portal origin:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.9, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../portal origin 2:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.0431373), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dw5k3"]
+_data = {
+"RESET": SubResource("Animation_f1t54"),
+"portal": SubResource("Animation_ox28r"),
+"portal in": SubResource("Animation_3t6af")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_u1xd6"]
+animation = &"portal"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7hyi2"]
+animation = &"portal in"
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_sh4cm"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_trdf6"]
+graph_offset = Vector2(-183.288, 66.071)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_7hyi2")
+nodes/Animation/position = Vector2(-60, 120)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_u1xd6")
+"nodes/Animation 2/position" = Vector2(120, 180)
+nodes/OneShot/node = SubResource("AnimationNodeOneShot_sh4cm")
+nodes/OneShot/position = Vector2(320, 100)
+nodes/output/position = Vector2(520, 100)
+node_connections = [&"OneShot", 0, &"Animation", &"output", 0, &"OneShot"]
+
+[node name="Node" type="Node"]
+
+[node name="portal" type="Sprite2D" parent="."]
+texture = ExtResource("6_1uy2n")
+hframes = 3
+vframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../portal")
+libraries = {
+"": SubResource("AnimationLibrary_dw5k3")
+}
+
+[node name="portal origin" type="Sprite2D" parent="."]
+position = Vector2(27, 73)
+texture = ExtResource("2_hxbjv")
+hframes = 6
+
+[node name="portal origin 2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.0431373)
+position = Vector2(28, 73)
+scale = Vector2(0.24946, 0.24946)
+texture = ExtResource("3_hvqwb")
+hframes = 6
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+root_node = NodePath("../portal")
+tree_root = SubResource("AnimationNodeBlendTree_trdf6")
+anim_player = NodePath("../AnimationPlayer")
+parameters/OneShot/active = false
+parameters/OneShot/internal_active = false
+parameters/OneShot/request = 0

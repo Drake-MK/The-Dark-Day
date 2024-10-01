@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://ludnyme6b858"]
+
+[ext_resource type="Texture2D" uid="uid://cyxvfiidwmtox" path="res://Assets/Game Ass/Jungle Asset Pack/Jungle Asset Pack/3 Man/Man_attack.png" id="1_kokwq"]
+[ext_resource type="Script" path="res://Sceans/story/script/man_attack.gd" id="2_br5al"]
+
+[sub_resource type="Animation" id="Animation_5xshp"]
+resource_name = "manattack"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_qajpa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ffege"]
+_data = {
+"RESET": SubResource("Animation_qajpa"),
+"manattack": SubResource("Animation_5xshp")
+}
+
+[node name="ManAttack" type="Sprite2D"]
+position = Vector2(1, -1)
+texture = ExtResource("1_kokwq")
+hframes = 4
+script = ExtResource("2_br5al")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ffege")
+}

@@ -1,0 +1,8 @@
+set {s} += 1
+if {s} == 1:
+	join MC 1 [animation="Fade In Up"]
+	MC (mc): This ain't the same station I was before shutting down\
+Looks like the station has been destroyed by the some rebels.
+	MC: Could it be "The Great Earth" ?
+	leave MC
+	System: UPDATE \: Find the "Heart" of the Battle Station.

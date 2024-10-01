@@ -1,0 +1,179 @@
+[gd_scene load_steps=12 format=3 uid="uid://bl8r3x6jfvhu6"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/ghost.gd" id="1_kd4k1"]
+[ext_resource type="Texture2D" uid="uid://dm2k3q6nifqjt" path="res://Assets/Game Ass/craftpix-net-159846-free-sci-fi-platformer-1-bit-pixel-art-game-kit/Enemies/Alien1.png" id="1_xtpsu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4qkw7"]
+
+[sub_resource type="Animation" id="Animation_b5o3e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fang area R/CollisionPolygon2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ljchg"]
+resource_name = "attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [16, 17, 18, 19, 20, 21, 22, 23, 24, 16]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fang area R/CollisionPolygon2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_hf0gr"]
+resource_name = "dead"
+length = 0.55
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [32, 33, 34, 35, 36, 37]
+}
+
+[sub_resource type="Animation" id="Animation_wbywo"]
+resource_name = "idle"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_2ayp5"]
+resource_name = "run"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11, 12, 13, 14, 15]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s1gjr"]
+_data = {
+"RESET": SubResource("Animation_b5o3e"),
+"attack": SubResource("Animation_ljchg"),
+"dead": SubResource("Animation_hf0gr"),
+"idle": SubResource("Animation_wbywo"),
+"run": SubResource("Animation_2ayp5")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g5aub"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gp3oa"]
+size = Vector2(40.5593, 20)
+
+[node name="ghost" type="Area2D" groups=["enemy"]]
+collision_layer = 2
+script = ExtResource("1_kd4k1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(5, -11)
+texture = ExtResource("1_xtpsu")
+hframes = 8
+vframes = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -15)
+scale = Vector2(1.38279, 1.9404)
+shape = SubResource("CircleShape2D_4qkw7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_s1gjr")
+}
+autoplay = "idle"
+
+[node name="visible area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="visible area"]
+position = Vector2(6, -11)
+scale = Vector2(22.5732, 22.601)
+shape = SubResource("CircleShape2D_g5aub")
+debug_color = Color(0.757677, 0.185304, 1, 0.42)
+
+[node name="attack area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack area"]
+position = Vector2(5, -24)
+scale = Vector2(1.07987, 0.582243)
+shape = SubResource("RectangleShape2D_gp3oa")
+debug_color = Color(0.551026, 0.563456, 9.62615e-07, 0.42)
+
+[node name="fang area R" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="fang area R"]
+polygon = PackedVector2Array(9, -27, 16, -30, 24, -30, 27, -27, 27, -21, 12, -19)
+
+[node name="fang area L" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="fang area L"]
+position = Vector2(-27, 0)
+rotation = 0.024625
+polygon = PackedVector2Array(12.2574, -30.311, 20.255, -30.508, 26.327, -27.6566, 27, -21, 14.4538, -22.3627, 9.47989, -21.2399, 9.35678, -26.2383)
+
+[connection signal="body_entered" from="visible area" to="." method="_on_visible_area_body_entered"]
+[connection signal="body_exited" from="visible area" to="." method="_on_visible_area_body_exited"]
+[connection signal="body_entered" from="attack area" to="." method="_on_attack_area_body_entered"]
+[connection signal="body_exited" from="attack area" to="." method="_on_attack_area_body_exited"]
+[connection signal="body_entered" from="fang area R" to="." method="_on_fang_area_r_body_entered"]
+[connection signal="body_entered" from="fang area L" to="." method="_on_fang_area_l_body_entered"]

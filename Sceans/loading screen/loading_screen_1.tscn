@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvdhy6mji2wo3"]
+
+[ext_resource type="Script" path="res://Sceans/loading screen/loading_screen_1.gd" id="1_d2rxr"]
+[ext_resource type="Texture2D" uid="uid://c2tuh8obiqwhn" path="res://Assets/Game Ass/3bdf575ea218e3400d79f5bbb4dd3308-vmake(1).jpeg" id="1_w85ko"]
+[ext_resource type="FontFile" uid="uid://5dt4q6bp18ia" path="res://Assets/Game Ass/FOnts/vecna-font/Vecna-oppx.ttf" id="2_rva4b"]
+
+[node name="loading screen_1" type="Node"]
+script = ExtResource("1_d2rxr")
+
+[node name="3Bdf575Ea218e3400d79f5Bbb4Dd3308-vmake(1)" type="Sprite2D" parent="."]
+position = Vector2(898, 540)
+texture = ExtResource("1_w85ko")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(898, 579)
+zoom = Vector2(1.2, 1.2)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 83.0
+offset_top = 936.0
+offset_right = 248.0
+offset_bottom = 963.0
+scale = Vector2(9.86488, 2.57266)
+value = 50.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="."]
+offset_left = 118.0
+offset_top = 201.0
+offset_right = 430.0
+offset_bottom = 286.0
+scale = Vector2(2.31579, 2.31579)
+theme_override_fonts/font = ExtResource("2_rva4b")
+theme_override_font_sizes/font_size = 34
+text = "And slowly they came and polluted
+the great earth"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 749.0
+offset_top = 639.0
+offset_right = 1258.0
+offset_bottom = 759.0
+scale = Vector2(2.31579, 2.31579)
+theme_override_fonts/font = ExtResource("2_rva4b")
+theme_override_font_sizes/font_size = 34
+text = "Hence we must take revenge
+
+        - The new world"

@@ -1,0 +1,52 @@
+MC: What is going on?
+leave --All-- [animation="Instant In Or Out"]
+[wait time="1.0"]
+[background arg="res://Assets/BG/download (1).jpeg" fade="0.0"]
+[wait time="0.3"]
+[background arg="res://Assets/BG/download.jpeg" fade="0.0"]
+[wait time="0.2"]
+[background arg="res://Assets/BG/download (2).jpeg" fade="0.0"]
+[wait time="0.1"]
+[background arg="res://Assets/BG/Dunkirk Second World War Poster WW2 Print - Etsy.jpeg" fade="0.0"]
+[wait time="0.2"]
+[background arg="res://Assets/BG/Falling for Someone, Walker Paulsen.jpeg" fade="0.0"]
+[wait time="0.3"]
+[background arg="res://Assets/BG/the-great-war-between-humans-and-cyborgs-v0-ujfnjrlljcf91.webp" fade="0.0"]
+[wait time="0.1"]
+[background arg="res://Assets/BG/q.jpeg" fade="0.0"]
+[wait time="0.2"]
+[background arg="res://Assets/BG/r.jpeg" fade="0.0"]
+[wait time="0.3"]
+[background arg="res://Assets/BG/u.jpeg" fade="0.0"]
+[wait time="0.2"]
+[background arg="res://Assets/BG/Victor Hugo’s Blotto Drawings In Coal, Dust And Blood (1848-1866) - Flashbak.jpeg" fade="0.0"]
+[wait time="0.1"]
+[background arg="res://Assets/BG/fdg.jpeg" fade="0.0"]
+[wait time="0.3"]
+[background arg="res://Assets/BG/fdg.jpeg" fade="0.0"]
+[background arg="res://Assets/BG/download (1).jpeg" fade="0.0"]
+[wait time="0.3"]
+[background arg="res://Assets/BG/download.jpeg" fade="0.0"]
+[wait time="0.3"]
+[background arg="res://Assets/BG/download (2).jpeg" fade="0.0"]
+[wait time="0.3"]
+[background arg="res://Assets/BG/Dunkirk Second World War Poster WW2 Print - Etsy.jpeg" fade="0.0"]
+join TAi 1 [animation="Instant In Or Out"]
+TAi: Log updated successfully.....
+TAi: Memories Retrival \: On\
+Trying To access Hidden Memories...........\
+Failed.............................\
+TAi: . .. .... .. ... ...... .\
+. .. .. . .. . .... ..\
+... .. .... ..
+TAi: The reality is Crumbling.....\
+!ErRRoR\
+PLese Exit the woRld....
+TAi: Find Your Weapon Hidden in the right deep corners of the sc..r.een...................
+[signal arg="true"]
+leave TAi [animation="Instant In Or Out"]
+join MC 1 [animation="Instant In Or Out"]
+MC: Looks like I lost something important to me
+MC: Someting Precious
+MC: Someting I lost to protect
+leave TAi [animation="Instant In Or Out"]

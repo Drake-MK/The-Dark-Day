@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://0hebjlir3fq7"]
+
+[ext_resource type="Texture2D" uid="uid://2mjgl6lsrbpd" path="res://Assets/Ui/Wenrexa Interface UI KIT #4/PNG/ProgressBar_01/BarV1_Bar.png" id="1_lulkv"]
+[ext_resource type="Script" path="res://Sceans/Health/hitpoints.gd" id="1_yi5gc"]
+[ext_resource type="Texture2D" uid="uid://cy8csheoggiy3" path="res://Assets/Ui/Wenrexa Interface UI KIT #4/PNG/ProgressBar_01/BarV1_ProgressBarBorder.png" id="2_87qi6"]
+[ext_resource type="Texture2D" uid="uid://cboubps2axmly" path="res://Assets/Ui/Wenrexa Interface UI KIT #4/PNG/ProgressBar_01/BarV1_ProgressBar.png" id="3_5mhve"]
+
+[node name="Hitpoints" type="Sprite2D"]
+position = Vector2(0.500023, -1.99999)
+script = ExtResource("1_yi5gc")
+
+[node name="bg" type="Sprite2D" parent="."]
+position = Vector2(1, -11)
+texture = ExtResource("1_lulkv")
+
+[node name="Bar Border" type="Sprite2D" parent="."]
+position = Vector2(1, -11)
+texture = ExtResource("2_87qi6")
+
+[node name="1" type="Sprite2D" parent="."]
+position = Vector2(-101.25, -11.25)
+scale = Vector2(0.245387, 1.02381)
+texture = ExtResource("3_5mhve")
+
+[node name="2" type="Sprite2D" parent="."]
+position = Vector2(-33, -11.25)
+scale = Vector2(0.245387, 1.02381)
+texture = ExtResource("3_5mhve")
+
+[node name="3" type="Sprite2D" parent="."]
+position = Vector2(35, -11.25)
+scale = Vector2(0.245387, 1.02381)
+texture = ExtResource("3_5mhve")
+
+[node name="4" type="Sprite2D" parent="."]
+position = Vector2(103, -11.25)
+scale = Vector2(0.245387, 1.02381)
+texture = ExtResource("3_5mhve")
+
+[node name="Camera2D" type="Camera2D" parent="."]

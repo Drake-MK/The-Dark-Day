@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b31uxgst63alt"]
+
+[ext_resource type="Texture2D" uid="uid://bha275tj6k04g" path="res://Assets/Game Ass/Robot Adventurer character asset/Laser gun/laser gun ikon.png" id="1_eiqik"]
+[ext_resource type="Script" path="res://Scripts/Player/gun.gd" id="2_gqofj"]
+
+[node name="gun" type="Sprite2D"]
+texture_filter = 1
+scale = Vector2(0.0515981, 0.0515981)
+texture = ExtResource("1_eiqik")
+script = ExtResource("2_gqofj")

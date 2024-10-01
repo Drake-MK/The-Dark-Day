@@ -1,0 +1,8 @@
+if {2_2} == 0:
+	join MC 1 [animation="Instant In Or Out"]
+	MC: M..MONSTERS........
+	MC: Surely, they have made a deal with devils to create these... \
+monstrosities...
+	leave MC [animation="Instant In Or Out"]
+	System: MISSION UPDATED \: Find out what is going out in the unknown battle station
+	set {2_2} += 1

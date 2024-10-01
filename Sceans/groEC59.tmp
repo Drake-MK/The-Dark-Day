@@ -1,0 +1,90 @@
+[gd_scene load_steps=8 format=3 uid="uid://dkfmy3d8a1tng"]
+
+[ext_resource type="Texture2D" uid="uid://b5252238a5ef6" path="res://Assets/craftpix-net-159846-free-sci-fi-platformer-1-bit-pixel-art-game-kit/Enemies/Alien4.png" id="1_q6xfm"]
+[ext_resource type="Script" path="res://Scripts/grosshoper.gd" id="1_ypf1r"]
+[ext_resource type="Texture2D" uid="uid://bqiauha2j7ql4" path="res://icon.svg" id="3_3xi0n"]
+[ext_resource type="AnimationLibrary" uid="uid://wrqc1nbnn0gy" path="res://animation/Enemies/grasshopper/grasshopper.res" id="3_lj73n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v5n18"]
+size = Vector2(21.2062, 13.9707)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cx7af"]
+size = Vector2(44, 18)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ci18"]
+
+[node name="Grosshoper" type="Area2D"]
+collision_layer = 4
+collision_mask = 109
+script = ExtResource("1_ypf1r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(7, -10)
+scale = Vector2(1.00439, 1.0512)
+texture = ExtResource("1_q6xfm")
+hframes = 8
+vframes = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": ExtResource("3_lj73n")
+}
+
+[node name="visible zone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="visible zone"]
+position = Vector2(6.4043, -9.5)
+scale = Vector2(10.6191, 1.21683)
+shape = SubResource("RectangleShape2D_v5n18")
+debug_color = Color(0.352941, 0.552941, 0.486275, 1)
+
+[node name="fang attack area right" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="fang attack area right"]
+position = Vector2(20, -26)
+scale = Vector2(-1.95455, 0.975945)
+polygon = PackedVector2Array(9.53674e-07, -1.02464, 2.04651, -7.17253, 7.16279, -10.2465, 11.7674, -12.2958, 11.7674, -13.3204, 5.11628, -12.2958, 1.02326, -11.2711, -2.04651, -3.07394, -3.58139, 7.17254, -5.11628, 15.3697, -5.11628, 16.3944, -3.58139, 14.3451)
+disabled = true
+
+[node name="fang attack area left" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="fang attack area left"]
+position = Vector2(-1.86263e-09, -33)
+rotation = -1.54099
+scale = Vector2(-1.95455, 0.975945)
+polygon = PackedVector2Array(-3.35813, 19.2764, -1.76293, 15.2713, 1.90735e-06, 1.19209e-07, 3.17514, -6.98611, 7.16279, -10.2465, 11.449, -12.6426, 13.029, -15.6236, 5.80838, -11.9544, 1.16004, -9.15665, -2.0151, -2.17054, -2.66374, 7.01665)
+disabled = true
+
+[node name="detch player and attack2" type="Area2D" parent="."]
+position = Vector2(15, -9)
+
+[node name="attack" type="CollisionShape2D" parent="detch player and attack2"]
+position = Vector2(-9, -1)
+shape = SubResource("RectangleShape2D_cx7af")
+debug_color = Color(0.705253, 0.489046, 0, 0.42)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, -10)
+shape = SubResource("CircleShape2D_4ci18")
+debug_color = Color(0.607079, 0.0987091, 0.985715, 0.42)
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(3, -9)
+scale = Vector2(0.0113258, 0.0096245)
+texture = ExtResource("3_3xi0n")
+
+[node name="limiter L&R" type="RayCast2D" parent="."]
+modulate = Color(0.65098, 1, 1, 1)
+position = Vector2(-6, -11)
+scale = Vector2(4.17507, 0.315941)
+collision_mask = 4
+
+[connection signal="area_entered" from="visible zone" to="." method="_on_visible_zone_area_entered"]
+[connection signal="body_entered" from="visible zone" to="." method="_on_visible_zone_body_entered"]
+[connection signal="body_exited" from="visible zone" to="." method="_on_visible_zone_body_exited"]
+[connection signal="body_entered" from="fang attack area right" to="." method="_on_fang_attack_area_right_body_entered"]
+[connection signal="body_exited" from="fang attack area right" to="." method="_on_fang_attack_area_right_body_exited"]
+[connection signal="body_entered" from="fang attack area left" to="." method="_on_fang_attack_area_left_body_entered"]
+[connection signal="body_exited" from="fang attack area left" to="." method="_on_fang_attack_area_left_body_exited"]
+[connection signal="body_entered" from="detch player and attack2" to="." method="_on_detch_player_and_attack_2_body_entered"]
+[connection signal="body_exited" from="detch player and attack2" to="." method="_on_detch_player_and_attack_2_body_exited"]

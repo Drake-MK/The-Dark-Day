@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckxe5yayd0x55"]
+
+[ext_resource type="Script" path="res://Sceans/story/Story Script.gd" id="1_8emy5"]
+
+[node name="story" type="Node"]
+script = ExtResource("1_8emy5")
