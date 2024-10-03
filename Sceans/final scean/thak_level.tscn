@@ -2002,7 +2002,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_wbqkl"]
 resource_name = "base"
-length = 15.0
+length = 30.0
 tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -2027,7 +2027,7 @@ tracks/1/path = NodePath("CharacterBody2D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(3, 7),
+"times": PackedFloat32Array(3, 11.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(24, -21), Vector2(554, -23)]
@@ -2039,7 +2039,7 @@ tracks/2/path = NodePath("Camera2D:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(3, 4.3, 8.3, 11.6, 12.9),
+"times": PackedFloat32Array(3, 6.9, 16.5, 22.1, 29.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(24, -26), Vector2(318.45, -114.075), Vector2(930, -297), Vector2(1807, -411), Vector2(1807, 307)]
