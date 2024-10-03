@@ -4239,11 +4239,11 @@ scale = Vector2(0.99345, 1.01226)
 
 [connection signal="body_exited" from="Dialogue Manager/Dummies\\/2D" to="Dialogue Manager" method="_on_d_body_exited"]
 [connection signal="body_entered" from="Portals/last portal/last exit" to="Portals" method="_on_last_exit_body_entered"]
-[connection signal="body_entered" from="Portals/PortalA/enter" to="Portals" method="_on_enter_exit_body_entered"]
 [connection signal="body_entered" from="Portals/PortalA/enter" to="Portals" method="_on_enter_body_entered"]
+[connection signal="body_entered" from="Portals/PortalA/enter" to="Portals" method="_on_enter_exit_body_entered"]
 [connection signal="body_exited" from="Portals/PortalA/enter" to="Portals" method="_on_enter_exit_body_exited"]
-[connection signal="body_entered" from="Portals/PortalA3/enter" to="Portals" method="_on_enter_exit_body_entered"]
 [connection signal="body_entered" from="Portals/PortalA3/enter" to="Portals" method="_on_enter_body_entered"]
+[connection signal="body_entered" from="Portals/PortalA3/enter" to="Portals" method="_on_enter_exit_body_entered"]
 [connection signal="body_exited" from="Portals/PortalA3/enter" to="Portals" method="_on_enter_exit_body_exited"]
 [connection signal="body_entered" from="Portals/PortalA2/exit" to="Portals" method="_on_exit_body_entered"]
 [connection signal="body_entered" from="Portals/PortalB/enter B" to="Portals" method="_on_enter_b_body_entered"]
